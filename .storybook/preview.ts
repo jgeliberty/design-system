@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import '~assets/stylesheets/gimli.min.css';
 
 const preview: Preview = {
   parameters: {

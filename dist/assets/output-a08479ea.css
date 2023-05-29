@@ -1,0 +1,22 @@
+.disabled {
+  cursor: not-allowed !important;
+  border-color: #EEEEEE !important;
+  fill: #EEEEEE !important;
+  color: #EEEEEE !important;
+}
+
+.gimliIcon.pointer {
+  cursor: pointer;
+}
+.gimliIcon-primary {
+  color: var(--main-color, #e82f4f);
+}
+.gimliIcon-secondary {
+  color: var(--salefunnelv2_gl_utilitary_color, #112846);
+}
+.gimliIcon-white {
+  color: white;
+}
+.gimliIcon-disabled {
+  color: #9A9A9A;
+}

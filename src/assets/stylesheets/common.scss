@@ -1,0 +1,9 @@
+@import './colors.scss';
+@import './screen-sizes.scss';
+
+.disabled {
+    cursor: not-allowed !important;
+    border-color: $lightGreyColor !important;
+    fill: $lightGreyColor !important;
+    color: $lightGreyColor !important;
+}
