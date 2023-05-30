@@ -15,17 +15,7 @@ function webpackAlias() {
 const alias = webpackAlias();
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  typescript: {
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      compilerOptions: {
-        allowSyntheticDefaultImports: false,
-        esModuleInterop: false,
-      },
-      propFilter: () => true,
-    },
-  },
+  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -38,13 +28,12 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: true,
-    defaultName: 'Documentation',
   },
   webpackFinal: async (config) => {
     if (config.resolve) {
-      console.debug('alias', alias);
       config.resolve.alias = { ...config.resolve.alias, ...alias };
     }
+    console.debug('alias', alias);
     return config;
   },
 };

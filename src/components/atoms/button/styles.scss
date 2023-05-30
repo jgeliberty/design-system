@@ -1,0 +1,104 @@
+@import '../../../assets/stylesheets/common.scss';
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    padding: 10px 16px;
+    height: 48px;
+
+    &-textLoader span {
+        display: flex;
+    }
+    
+    .gimliIcon, &-loader {
+        display: flex;
+        margin-right: 8px;
+    }
+
+    &-filled-primary {
+        color: white;
+        border: none;
+        background-color: $primaryColor;
+    }
+    
+    &-filled-secondary {
+        color: white;
+        border: none;
+        background-color: $secondaryColor;
+    }
+
+    &-filled-black {
+        color: white;
+        border: none;
+        background-color: black;
+    }
+    
+    &-outlined-primary {
+        color: $primaryColor;
+        border: 1px solid $primaryColor;
+        background-color: white;
+        // Use for beat loader color
+        .button-textLoader span span {
+            background-color: $primaryColor;
+        }
+        // Use for spinner
+        .button-loader span {
+            border-color: $primaryColor;
+            border-bottom-color: transparent;
+        }
+    }
+    
+    &-outlined-secondary {
+        color: $secondaryColor;
+        border: 1px solid $secondaryColor;
+        background-color: white;
+        // Use for beat loader color
+        .button-textLoader span span {
+            background-color: $secondaryColor;
+        }
+        // Use for spinner
+        .button-loader span {
+            border-color: $secondaryColor;
+            border-bottom-color: transparent;
+        }
+    }
+
+    &-outlined-black {
+        color: black;
+        border: 1px solid black;
+        background-color: white;
+        // Use for beat loader color
+        .button-textLoader span span {
+            background-color: black;
+        }
+        // Use for spinner
+        .button-loader span {
+            border-color: black;
+            border-bottom-color: transparent;
+        }
+    }
+
+    &-filled-disabled {
+        cursor: not-allowed !important;
+        border: 1px solid $lightGreyColor;
+        background-color: $lightGreyColor;
+        color: $darkGreyColor;
+    }
+
+    &-outlined-disabled {
+        cursor: not-allowed !important;
+        color: $darkGreyColor;
+        border: 1px solid $darkGreyColor;
+        // Use for beat loader color
+        .button-textLoader span span {
+            background-color: $darkGreyColor;
+        }
+        // Use for spinner
+        .button-loader span {
+            border-color: $darkGreyColor;
+            border-bottom-color: transparent;
+        }
+    }
+}
