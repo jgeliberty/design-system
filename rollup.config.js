@@ -5,13 +5,12 @@ import alias from '@rollup/plugin-alias';
 import dts from 'rollup-plugin-dts';
 import { terser } from 'rollup-plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import copy from 'rollup-plugin-copy';
 import path from 'path';
 
 import scss from 'rollup-plugin-scss';
 
 const postcss = require('rollup-plugin-postcss');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
 
 const packageJson = require('./package.json');
 
@@ -36,22 +35,9 @@ export default [
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
+      postcss(),
       alias({
-        entries: [
-          {
-            find: '~atoms',
-            replacement: path.resolve(__dirname, 'src/components/atoms'),
-          },
-          {
-            find: '~assets',
-            replacement: path.resolve(__dirname, 'src/assets'),
-          },
-        ],
-      }),
-      scss({
-        processor: () => postcss([autoprefixer()]),
-        includePaths: [path.join(__dirname, '../../node_modules/'), 'node_modules/'],
-        outputStyle: 'compressed',
+        entries: [{ find: '~assets', replacement: './src/assets' }],
       }),
     ],
     external: ['react', 'react-dom', 'styled-components'],
@@ -61,10 +47,11 @@ export default [
     output: [{ file: packageJson.types, format: 'es' }],
     plugins: [
       dts.default(),
-      scss({
-        processor: () => postcss([autoprefixer()]),
-        includePaths: [path.join(__dirname, '../../node_modules/'), 'node_modules/'],
-        outputStyle: 'compressed',
+      postcss({
+        minimize: true,
+      }),
+      alias({
+        entries: [{ find: '~assets', replacement: './src/assets' }],
       }),
     ],
   },

@@ -33,7 +33,6 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.alias = { ...config.resolve.alias, ...alias };
     }
-    console.debug('alias', alias);
     return config;
   },
 };

@@ -1,6 +1,6 @@
 {
   "name": "@jgeliberty/design-system",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "e-Liberty design system",
   "repository": "https://github.com/jgeliberty/design-system",
   "main": "dist/index.cjs.js",
@@ -10,7 +10,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs",
+    "build": "rm -rf ./dist && rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest"
