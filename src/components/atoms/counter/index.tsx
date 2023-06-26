@@ -5,10 +5,10 @@ import {GimliIcon} from '~atoms';
 
 interface CounterInterface {
   value?: number;
-  onClick: (value: number) => {}
+  onClick?: (value: number) => void
 };
 
-const Counter = ({ value = 0, onClick       }: CounterInterface) => {
+const Counter = ({ value = 0, onClick = (value: number) => {} }: CounterInterface) => {
   const [currentNumber, setCurrentNumber] = useState(value);
 
   const updateNumber = (newValue: number) => {

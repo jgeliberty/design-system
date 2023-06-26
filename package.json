@@ -1,10 +1,10 @@
 {
   "name": "@jgeliberty/design-system",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "e-Liberty design system",
   "repository": "https://github.com/jgeliberty/design-system",
   "main": "dist/index.cjs.js",
-  "module": "dist/umd/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Counter from '.';
+import CounterDisplay from '.';
 
 const meta = {
-  title: 'atoms/Counter',
-  component: Counter,
-} satisfies Meta<typeof Counter>;
+  title: 'atoms/CounterDisplay',
+  component: CounterDisplay,
+} satisfies Meta<typeof CounterDisplay>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
