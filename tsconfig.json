@@ -1,48 +1,99 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "esModuleInterop": true,
-      "strict": true,
-      "skipLibCheck": true,
-      "jsx": "react",
-      "module": "ESNext",
-      "declaration": true,
-      "declarationDir": "types",
-      "sourceMap": true,
-      "outDir": "dist",
-      "moduleResolution": "node",
-      "emitDeclarationOnly": true,
-      "allowSyntheticDefaultImports": true,
-      "forceConsistentCasingInFileNames": true,
-      "paths": {
-        "~atoms": ["./src/components/atoms"],
-        "~atoms/*": ["./src/components/atoms/*"],
-        "~molecules": ["./src/components/molecules"],
-        "~molecules/*": ["./src/components/molecules/*"],
-        "~organisms": ["./src/components/organisms"],
-        "~organisms/*": ["./src/components/organisms/*"],
-        "~templates": ["./src/components/templates"],
-        "~templates/*": ["./src/components/templates/*"],
-        "~pages": ["./src/components/pages"],
-        "~pages/*": ["./src/components/pages/*"],
-        "~assets": ["./src/assets"],
-        "~assets/*": ["./src/assets/*"],
-        "~constants": ["./src/constants"],
-        "~constants/*": ["./src/constants/*"],
-        "~utils": ["./src/utils"],
-        "~utils/*": ["./src/utils/*"],
-        "~helpers": ["./src/helpers"],
-        "~helpers/*": ["./src/helpers/*"],
-        "~services": ["./src/services"],
-        "~services/*": ["./src/services/*"],
-        "~mocks": ["./src/mocks"],
-        "~mocks/*": ["./src/mocks/*"]
-      }
-    },
-    "exclude": [
-      "dist",
-      "node_modules",
-      "src/**/*.test.tsx",
-      "src/**/*.stories.tsx"
-    ]
-  }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "~atoms": [
+        "./src/components/atoms"
+      ],
+      "~atoms/*": [
+        "./src/components/atoms/*"
+      ],
+      "~molecules": [
+        "./src/components/molecules"
+      ],
+      "~molecules/*": [
+        "./src/components/molecules/*"
+      ],
+      "~organisms": [
+        "./src/components/organisms"
+      ],
+      "~organisms/*": [
+        "./src/components/organisms/*"
+      ],
+      "~templates": [
+        "./src/components/templates"
+      ],
+      "~templates/*": [
+        "./src/components/templates/*"
+      ],
+      "~pages": [
+        "./src/components/pages"
+      ],
+      "~pages/*": [
+        "./src/components/pages/*"
+      ],
+      "~assets": [
+        "./src/assets"
+      ],
+      "~assets/*": [
+        "./src/assets/*"
+      ],
+      "~constants": [
+        "./src/constants"
+      ],
+      "~constants/*": [
+        "./src/constants/*"
+      ],
+      "~utils": [
+        "./src/utils"
+      ],
+      "~utils/*": [
+        "./src/utils/*"
+      ],
+      "~helpers": [
+        "./src/helpers"
+      ],
+      "~helpers/*": [
+        "./src/helpers/*"
+      ],
+      "~services": [
+        "./src/services"
+      ],
+      "~services/*": [
+        "./src/services/*"
+      ],
+      "~mocks": [
+        "./src/mocks"
+      ],
+      "~mocks/*": [
+        "./src/mocks/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules/**",
+    "dist"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "tsx": true,
+            "jsx": true
+        }
+        // "project": "./tsconfig.json"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true,
+        "jest": true
+    },
+    "plugins": [
+        "react",
+        "prettier",
+        "@typescript-eslint",
+        "import",
+        "react-hooks",
+        "unused-imports"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "rules": {
+        "react/prop-types": "off", // Disables the requirement to define prop-types in React components. This is useful, especially when using TypeScript, as prop types can be handled by type-checking.
+        "react/react-in-jsx-scope": "off", // Disables the requirement to import React when using JSX. This rule is unnecessary when using React 17 and above, as importing React is no longer required.
+        "prettier/prettier": [
+            "error",
+            {},
+            {
+                "usePrettierrc": true
+            }
+        ], // Enforces consistent formatting using Prettier and raises an error if code formatting does not conform to the Prettier configuration.
+        "@typescript-eslint/explicit-module-boundary-types": "off", // Disables the requirement to explicitly declare types for exported functions and classes in TypeScript. This can reduce boilerplate code.
+        "@typescript-eslint/no-explicit-any": "off", // Disables the requirement to avoid using the any type in TypeScript. This is useful in situations where dynamic typing is necessary.
+        "unused-imports/no-unused-imports": "error", // Marks unused imported modules as errors.
+        // Raises an error for unused variables, except for those starting with an underscore. It provides the ability to ignore intentionally unused variables.
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        // Enforces a specific sorting order for import statements. The configuration allows ignoring case sensitivity and declaration sort.
+        "sort-imports": [
+            "error",
+            {
+                "ignoreCase": true,
+                "ignoreDeclarationSort": true
+            }
+        ],
+        "react-hooks/rules-of-hooks": "error", // Reports an error for incorrect usage of React hooks. It checks if hooks are used according to the rules of hooks, such as calling them only within functional components.
+        "react-hooks/exhaustive-deps": "warn", // Warns if there are missing dependencies in the dependency array of useEffect or useCallback hooks. This helps avoid potential bugs caused by missing dependencies in the dependency array.
+        // Enforces sorting of prop types inside React component declarations. The configuration enables sorting callbacks last, ignoring case sensitivity, and sorting required props first.
+        "react/sort-prop-types": [
+            1,
+            {
+                "callbacksLast": true,
+                "ignoreCase": true,
+                "requiredFirst": true,
+                "sortShapeProp": true,
+                "noSortAlphabetically": false
+            }
+        ],
+        "jsx-a11y/no-static-element-interactions": "off", // #https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md trop chiant cette regle :( :(
+        "jsx-a11y/label-has-for": "off", // deprecated to label-has-associated-control
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "react/require-default-props": [
+            1,
+            {
+                "forbidDefaultForRequired": true
+            }
+        ]
+    }
+}

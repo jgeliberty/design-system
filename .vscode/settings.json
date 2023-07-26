@@ -18,5 +18,9 @@
         "titleBar.inactiveBackground": "#eb833499",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#eb8334"
+    "peacock.color": "#eb8334",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
 }
